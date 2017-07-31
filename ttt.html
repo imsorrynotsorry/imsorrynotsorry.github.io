@@ -2,51 +2,31 @@
 <html>
 	<head>
 		<title>Tic Tac Toe</title>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5/jquery.min.js" type="text/javascript"></script>
-		<script src="//bitstorm.org/jquery/color-animation/jquery.animate-colors.js" type="text/javascript"></script>
-		<script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.8.10/jquery-ui.js" type="text/javascript"></script>
-		<link href='//fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet' type='text/css'>
-		
-		<script type="text/javascript">			
-			$(document).ready(function(){
-				blink();
-			})
-					
-			function blink(){
-			$(".container")
-				.animate({backgroundColor: '#7fb52d'}, 250)
-				.animate({backgroundColor: '#3b2baf'}, 250)
-				.animate({backgroundColor: '#8af7e9'}, 250, function(){blink()});
-			}
-
-			function showWhite(){
-				var audio = $(".xando")[0];
-				$(".white").fadeIn("fast");
-				audio.pause();
-			}
-			
-			function hideWhite(){
-				var audio = $(".xando")[0];
-				audio.addEventListener('ended', function(){this.currentTime = 0;}, false);
-				$(".white").fadeOut("fast");
-				audio.play();
-			}
-			
-		</script>
-		
-		<link rel="stylesheet" type="text/css" href="css/ttt.css">
-
+		<link rel="stylesheet" type="text/css" href="css/ttt.css"/>
+		<script src="js/ttt.js"></script>
 	</head>
 	
 	
 	<body>
-		<div class="container"></div>
-		<div class="white"></div>
-		<a class="type" onmouseover="hideWhite();" onmouseout="showWhite();">Tic - Tac - Toe</a>
-		<audio class="xando" preload loop> 
- 			<source src="audio/xando.mp3">
-  			<source src="audio/xando.wav">
-		</audio>
-		<div id="rectangle" style="width:100%; height:20 px; background-color:blue"></div>
+		<h1 id="song" class="title" onmouseover="playSound('xando')" onmouseout="stopSound('xando')">TIC  TAC  TOE</h1>	
+		<p>
+			<div id="cont00" class="cont" onclick="clickTTT(0,0)"><br></div>
+			<div id="cont01" class="cont" onclick="clickTTT(0,1)"><br></div>
+			<div id="cont02" class="cont" onclick="clickTTT(0,2)"><br></div>
+		</p>
+		<p>
+			<div id="cont10" class="cont" onclick="clickTTT(1,0)"><br></div>
+			<div id="cont11" class="cont" onclick="clickTTT(1,1)"><br></div>
+			<div id="cont12" class="cont" onclick="clickTTT(1,2)"><br></div>
+		</p>
+		<p>
+			<div id="cont20" class="cont" onclick="clickTTT(2,0)"><br></div>
+			<div id="cont21" class="cont" onclick="clickTTT(2,1)"><br></div>
+			<div id="cont22" class="cont" onclick="clickTTT(2,2)"><br></div>
+		</p>
+
+		<audio id="xando" preload loop src="audio/xando.mp3"/> 
+ 
+		
 	</body>
 </html>

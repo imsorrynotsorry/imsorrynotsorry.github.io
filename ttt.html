@@ -6,9 +6,8 @@
 		<script src="js/ttt.js"></script>
 	</head>
 	
-	
 	<body>
-		<h1 id="song" class="title" onmouseover="playSound('xando')" onmouseout="stopSound('xando')">X's & O's</h1>	
+		<h1 id="song" class="title">X's & O's</h1>	
 		<p>
 			<div id="cont00" class="cont" onclick="clickTTT(0,0)"><br></div>
 			<div id="cont01" class="cont" onclick="clickTTT(0,1)"><br></div>
@@ -28,8 +27,9 @@
 		<audio id="xando" preload loop>
 			<source src="audio/xando.mp3" type="audio/mpeg">
 			<source src="audio/xando.ogg" type="audio/ogg">
-		</audio>			
- 
+		</audio>
 		
+		<h2 id="x-wins" class="title">X Wins: 0</h2>
+		<h2 id="o-wins" class="title">O Wins: 0</h2>
 	</body>
 </html>

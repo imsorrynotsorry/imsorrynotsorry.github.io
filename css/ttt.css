@@ -18,8 +18,20 @@
 }
 h1
 {
-	font-size: 5.9vw;
+	font-size: 4.2vw;
 	text-align: center;
+}
+h2
+{
+	width: 100%;
+	text-align: left;
+	display: inline-block;
+	vertical-align: top;
+	*display: inline;
+}
+#x-wins, #o-wins
+{
+	width: 48%;
 }
 p
 {

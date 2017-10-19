@@ -36,6 +36,10 @@
 				audio.play();
 			}
 			
+			function btn_onclick() 
+			{
+				window.location.href = "http://imsorrynotsorry.com/h.html";
+			}
 		</script>
 		<script>
 		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -104,7 +108,7 @@
 	<body>
 		<div class="container"></div>
 		<div class="white"></div>
-		<a class="type" onmouseover="hideWhite();" onmouseout="showWhite();">SORRY<br>NOT<br>SORRY</a>
+		<a class="type" onmouseover="hideWhite();" onClick="btn_onclick();" onmouseout="showWhite();">SORRY<br>NOT<br>SORRY</a>
 		<audio class="Sorry" preload loop> 
  			<source src="audio/sorry.mp3">
   			<source src="audio/sorry.wav">

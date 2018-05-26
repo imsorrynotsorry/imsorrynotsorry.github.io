@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Baltz's Learning Target Generator</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
+		<style>
+			h1, h2, h3, h4, h5, h6, select, input {
+		font-family: 'Corben', Georgia, Times, serif;
+		 font-size:20px;
+		}
+		input{
+		color: red;
+		}
+		body {
+		background: url(/ltgimg/cream_dust.png) repeat 0 0;
+		}
+		</style>
+	</head>
+	<body>
+		<h1 style="text-align:center;">Baltz's Learning Target Generator</h1>
+		<h2 id="prefixOne">By 
+		<select id="timeframe" onchange="selectTimeFrame();">
+			<option value="the end of the class">the end of the class
+			<option value="the end of the week">the end of the week
+			<option value="the end of the unit">the end of the unit
+			<option value="the end of this sentence">the end of this sentence
+		</select>, students will be able to 
+		<select id="blooms" class="bSelect" onchange="selectBlooms();">
+			<option value="collect"> Knowledge: collect
+			<option value="define"> Knowledge: define
+			<option value="describe"> Knowledge: describe
+			<option value="examine"> Knowledge: examine
+			<option value="identify"> Knowledge: identify
+			<option value="label"> Knowledge: label
+			<option value="list or log"> Knowledge: list/log
+			<option value="name"> Knowledge: name
+			<option value="quote"> Knowledge: quote
+			<option value="recall"> Knowledge: recall
+			<option value="recognize"> Knowledge: recognize
+			<option value="record"> Knowledge: record
+			<option value="show"> Knowledge: show
+			<option value="state"> Knowledge: state
+			<option value="tell"> Knowledge: tell
+			<option value="visualize"> Knowledge: visualize
+			<option value="convert"> Comprehension: convert
+			<option value="defend"> Comprehension: defend
+			<option value="demonstrate"> Comprehension: demonstrate
+			<option value="describe"> Comprehension: describe
+			<option value="diagram"> Comprehension: diagram
+			<option value="differentiate"> Comprehension: differentiate
+			<option value="discover"> Comprehension: discover
+			<option value="distinguish"> Comprehension: distinguish
+			<option value="explain"> Comprehension: explain
+			<option value="give examples"> Comprehension: give examples
+			<option value="paraphrase"> Comprehension: paraphrase
+			<option value="predict"> Comprehension: predict
+			<option value="recognize"> Comprehension: recognize
+			<option value="restate"> Comprehension: restate
+			<option value="specify"> Comprehension: specify
+			<option value="summarize"> Comprehension: summarize
+			<option value="apply"> Application: apply
+			<option value="calculate"> Application: calculate
+			<option value="classify"> Application: classify
+			<option value="complete"> Application: complete
+			<option value="construct"> Application: construct
+			<option value="experiment"> Application: experiment
+			<option value="illustrate"> Application: illustrate
+			<option value="interpret"> Application: interpret
+			<option value="manipulate"> Application: manipulate
+			<option value="model"> Application: model
+			<option value="produce or reproduce"> Application: re/produce
+			<option value="relate"> Application: relate
+			<option value="sequencing"> Application: sequencing
+			<option value="show"> Application: show
+			<option value="solve"> Application: solve
+			<option value="use"> Application: use
+			<option value="analyze"> Analysis: analyze
+			<option value="argue"> Analysis: argue
+			<option value="categorize"> Analysis: categorize
+			<option value="compare"> Analysis: compare
+			<option value="contrast"> Analysis: contrast
+			<option value="deduce"> Analysis: deduce
+			<option value="devise"> Analysis: devise
+			<option value="discuss"> Analysis: discuss
+			<option value="differentiate"> Analysis: differentiate
+			<option value="distinguish"> Analysis: distinguish
+			<option value="examine"> Analysis: examine
+			<option value="inspect"> Analysis: inspect
+			<option value="interpret"> Analysis: interpret
+			<option value="modify"> Analysis: modify
+			<option value="organize"> Analysis: organize
+			<option value="plan"> Analysis: plan
+			<option value="compile"> Synthesis: compile
+			<option value="compose"> Synthesis: compose
+			<option value="consolidate"> Synthesis: consolidate
+			<option value="create"> Synthesis: create
+			<option value="design"> Synthesis: design
+			<option value="develop"> Synthesis: develop
+			<option value="explain"> Synthesis: explain
+			<option value="generate"> Synthesis: generate
+			<option value="hypothesize"> Synthesis: hypothesize
+			<option value="justify"> Synthesis: justify
+			<option value="organize"> Synthesis: organize
+			<option value="produce"> Synthesis: produce
+			<option value="report"> Synthesis: report
+			<option value="schematize"> Synthesis: schematize
+			<option value="synthesize"> Synthesis: synthesize
+			<option value="write"> Synthesis: write
+			<option value="appraise"> Evaluation: appraise
+			<option value="ascertain"> Evaluation: ascertain
+			<option value="assess"> Evaluation: assess
+			<option value="critique"> Evaluation: critique
+			<option value="defend"> Evaluation: defend
+			<option value="determine"> Evaluation: determine
+			<option value="estimate"> Evaluation: estimate
+			<option value="evaluate"> Evaluation: evaluate
+			<option value="judge"> Evaluation: judge
+			<option value="measure"> Evaluation: measure
+			<option value="rate"> Evaluation: rate
+			<option value="reflect"> Evaluation: reflect
+			<option value="revise"> Evaluation: revise
+			<option value="score"> Evaluation: score
+			<option value="select"> Evaluation: select
+			<option value="value"> Evaluation: value
+		</select>
+		<input type="text" id="content" value="content/skill/concept" onchange="inputContent(this.value);">
+		as evidenced by 
+		<select id="activity" class="aSelect" onchange="selectActivity()">
+			<option value="arranging or matching">Arranging/Matching
+			<option value="building or constructing">Building/Constructing
+			<option value="charting">Charting
+			<option value="computing">Computing
+			<option value="counting">Counting
+			<option value="creating">Creating
+			<option value="discussing with partner">Discussing w/ Partner
+			<option value="drawing">Drawing
+			<option value="formulating">Formulating
+			<option value="graphing">Graphing
+			<option value="grouping">Grouping
+			<option value="highlighting or painting">Highlighting/Painting
+			<option value="modeling">Modeling
+			<option value="presenting or teaching">Presenting/Teaching
+			<option value="solving">Solving
+			<option value="summarizing">Summarizing
+			<option value="translating">Translating
+		</select>
+		a 
+		<select id="assessment" class="asSelect" onchange="selectAssignment()">
+			<option value="anticipatory chart">Anticipatory Chart
+			<option value="collaborative poster">Collaborative Poster
+			<option value="graphic organizer">Graphic Organizer
+			<option value="diagram">Diagram
+			<option value="exit slip">Exit Slip
+			<option value="foldable">Foldable
+			<option value="group presentation">Group Presentation
+			<option value="summary">Summary
+			<option value="quickwrite">Quickwrite
+			<option value="quiz">Quiz
+		</select>.
+		</h2>
+		<button type="button" onClick="randomAll()">I'm feeling lucky</button>
+		<h3 id="target"></h3>
+		<script>
+		var tf = document.getElementById("timeframe").value;
+		var b = document.getElementById("blooms").value;
+		var c = document.getElementById("content").value;
+		var a = document.getElementById("activity").value;
+		var as = document.getElementById("assessment").value;
+		function selectTimeFrame() {
+			tf = document.getElementById("timeframe").value;
+			document.getElementById("target").innerHTML = "By " + tf + ", students will be able to " + b + " " + c + " as evidenced by " + a + " a " + as + ".";
+		}
+		function selectBlooms() {
+			b = document.getElementById("blooms").value;
+			document.getElementById("target").innerHTML = "By " + tf + ", students will be able to " + b + " " + c + " as evidenced by " + a + " a " + as + ".";
+		}
+		function inputContent(d)
+		{
+			document.getElementById("content").value = d;
+			c = d;
+			document.getElementById("target").innerHTML = "By " + tf + ", students will be able to " + b + " " + c + " as evidenced by " + a + " a " + as + ".";
+		}
+		function selectActivity()
+		{
+			a = document.getElementById("activity").value;
+			document.getElementById("target").innerHTML = "By " + tf + ", students will be able to " + b + " " + c + " as evidenced by " + a + " a " + as + ".";
+		}
+		function selectAssignment()
+		{
+			as = document.getElementById("assessment").value;
+			document.getElementById("target").innerHTML = "By " + tf + ", students will be able to " + b + " " + c + " as evidenced by " + a + " a " + as + ".";
+			
+		}
+		function randomBlooms()
+		{
+			var options = $("#blooms > option");
+			var random = Math.floor(options.length * (Math.random() % 1));
+			options.attr('selected', false).eq(random).attr('selected', true);
+			selectBlooms();
+		}
+		function randomActivity()
+		{
+			var options = $("#activity > option");
+			var random = Math.floor(options.length * (Math.random() % 1));
+			options.attr('selected', false).eq(random).attr('selected', true);
+			selectActivity();
+		}
+		function randomAssessment()
+		{
+			var options = $("#assessment > option");
+			var random = Math.floor(options.length * (Math.random() % 1));
+			options.attr('selected', false).eq(random).attr('selected', true);
+			selectAssignment();
+		}
+		function randomAll()
+		{
+			randomBlooms();
+			randomActivity();
+			randomAssessment();
+			document.getElementById("target").innerHTML = "By " + tf + ", students will be able to " + b + " " + c + " as evidenced by " + a + " a " + as + ".";
+		}
+		</script>
+		
+	</body>
+</html>

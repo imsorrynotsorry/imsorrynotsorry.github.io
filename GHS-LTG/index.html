@@ -151,8 +151,7 @@
 			<option value="solving">Solving
 			<option value="summarizing">Summarizing
 			<option value="translating">Translating
-		</select>
-		a 
+		</select> a 
 		<select id="assessment" class="asSelect" onchange="selectAssignment()">
 			<option value="anticipatory chart">Anticipatory Chart
 			<option value="collaborative poster">Collaborative Poster
@@ -168,15 +167,46 @@
 		</h2>
 		<button type="button" onClick="randomAll()">I'm feeling lucky</button>
 		<h3 id="target"></h3>
+		<h3><br></h3>
+		<select id="hook" class="hSelect" onchange="selectHook()">
+			<option value="Introduce a unit on direct and indirect objects by laminating a sentence and taping it to the floor of her classroom by the door.  Students obviously stopped to read it and wondered why it was there.">Opening: Laminated Sentences
+			<option value="Use a prop from a story students are about to read. Use a plant, leaf, water, etc. in science; an abacus in math; a prop in history.">Opening: Show and Tell
+			<option value="Tell a quick and engaging story that goes directly to the material.  An example would be the introduction of a long division problem with a story about kids staying at home without their parents.  The long division sign would be the house, and the kids would huddle at the door as numbers knock from the position of the divisor.  The important moment (whether to open the door) turns on the rules of divisibility.">Opening: Story
+			<option value="Offer an interesting analogy that touches students' lives.  An example of a useful analogy is of a teacher comparing single replacement bonds in chemistry to dancers choosing partners at a school dance.">Opening: Analogy
+			<option value="An example could be a jacket like the main character in the story might have worn.  Or a glove and a flashlight to show the earth's rotation.">Opening: Prop
+			<option value="A picture, or a piece of music, or brief video">Opening: Media
+			<option value="Describe something great: Use great work by a student, or give reasons a famous author is highly regarded.  Have students close their eyes as you describe a scene or event from history; read a passage with descriptive adjectives, adverbs; a description of a planet, etc.">Opening: Status
+			<option value="Offer students a very challenging task and let them try to solve it.  An example would be when a teacher asked students what a complete sentence was.  The teacher gave the students five words to use for making a complete sentence.  The students couldn't make a sentence. So, the teacher asked the class what was missing.  The answer was a missing subject.  The surprise of the unsolvable riddle hooked the students for the remaining hour of the class.">Opening: Challenge
+			<option value="Using images or objects, students move from station to station making observations. The goal is for students to come to a conclusion about the objects/images that is related to a particular concept.">Opening: Gallery Walk
+			<option value="Place objects in a brown bag. Have students reach in and make observations about the contents of the bag (similarities, differences). This can also be used for students to pull out a strip of paper that gives them or their group a task to complete.">Opening: Brown Bag
+			<option value="Survey your students by asking questions and having them step to a side or corner of the room that represents their response.">Opening: Survey
+			<option value="Present a scenario and have students make a prediction (great for probability, statistics and data analysis).">Opening: Prediction
+			<option value="Create a scenario where someone is stumped and the students must figure out a solution independently or in groups.">Opening: Stumped
+			<option value="Play a song as the students enter the room. Leave it on during the warm-up. Ask students how the song might be related to a given concept. Let them share their ideas before you explain your purpose for doing it.">Opening: Song
+			<option value="Conduct an experiment that illustrates a concept. For example, use water to fill 3D containers to illustrate volume or help students make a recipe using benchmark measurements.">Opening: Experiment
+			<option value="Give students a group of words related to the lesson…have them guess the topic or find the word that doesn’t fit in the group.">Opening: Vocabulary Connections
+			<option value="Bring in a newspaper article or online news clip that addresses an area of interest or importance to your students.">Opening: News
+			<option value="Give students roles and have them act out a skit. Or, you can come in dressed for a given role. It can be as simple has wearing a sports jersey if you’re writing algebraic equations on a person buying a $75 ticket and x number of hot dogs at a game.">Opening: Skit/Dress Up
+			<option value="Using a picture book at the start of the lesson can be an effective strategy to motivate students and provoke interest. Math instruction, reading comprehension skills, writing traits, science and even social studies concepts can all be introduced using children’s literature. Picture books help make learning new concepts more accessible to students by highlighting the concepts in cultural context.">Opening: Trade Book
+			<option value="In order to get your students engaged in an upcoming lesson, ask them a question that will interest them and activate prior knowledge.">Opening: Questions
+			<option value="As noted above, the anticipatory set can be used to connect new learning to what students have learned already. Playing a quick game in order to recall prior knowledge can be an effective strategy for getting students engaged in the lesson and prepared to build off prior knowledge.">Opening: Play a Game
+			<option value="Present student with clues about the learning objective they will be taking on for the unit.">Opening: Scavenger Hunt
+		</select>
+		<h2 id="hookText">Opening:  </h2>
 		<script>
 		var tf = document.getElementById("timeframe").value;
 		var b = document.getElementById("blooms").value;
 		var c = document.getElementById("content").value;
 		var a = document.getElementById("activity").value;
 		var as = document.getElementById("assessment").value;
+		var ht = document.getElementById("hook").value;
 		function selectTimeFrame() {
 			tf = document.getElementById("timeframe").value;
 			document.getElementById("target").innerHTML = "By " + tf + ", students will be able to " + b + " " + c + " as evidenced by " + a + " a " + as + ".";
+		}
+		function selectHook() {
+			ht = document.getElementById("hook").value;
+			document.getElementById("hookText").innerHTML = "Opening:   " + ht;
 		}
 		function selectBlooms() {
 			b = document.getElementById("blooms").value;
